@@ -1,0 +1,5 @@
+to know the file at which man command is located?
+ans:press type man or echo $MAN
+
+to know what is ps?
+ans: man ps or whatis ps
