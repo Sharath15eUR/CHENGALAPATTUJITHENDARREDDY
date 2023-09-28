@@ -1,0 +1,1261 @@
+Problem solving through  programming in C assignments
+
+
+1.
+include <stdio.h>
+#define PI 3.14
+void main()
+{
+    int radius;
+    float area;
+    /* Enter the radius of a circle */
+    scanf("%d", &radius);
+
+/*Here the first part and the last part of the program is already written. 
+You have to write only the middle portion by carefully considering the
+variables used. You can use more variables if required but no other input and output
+statements can be used as the test input and corresponding output is already provided. 
+There are two public test cases which you can see and check whether your program is correct. 
+There is also one or two private test cases, the result of which you cannot
+see and which are used for evaluation purpose*/ 
+/*For example in this program the middle part can be written as:
+area = PI * radius * radius;  
+in the space provided */
+
+ area = 3.14 * radius * radius;
+
+2.
+#include <stdio.h>
+int main()
+{
+    double number;
+    scanf("%lf", &number); 
+    /* The number is entered automatically from the test cases and executed */
+    /* Write the rest of the code in the box below
+    As the output should exactly match with the output mentioned in the test cases
+    so copy and paste the following printf statements wherever and whichever is applicable
+      printf("The number is 0.");
+      printf("Negative number.");
+      printf("Positive number.");  
+    Do not use any other scanf statements */
+
+    if (number <= 0.0)
+    {
+        if (number == 0.0)
+            printf("The number is 0.");
+        else
+            printf("Negative number.");
+    }
+
+    else
+        printf("Positive number.");
+}
+
+3.
+#include <stdio.h>
+int main()
+{
+    int number;
+    scanf("%d", &number); /*An integer number is taken from the test case */
+
+/* Write the rest of the program in the box provided below. As the output
+should exactly match with the output provided in the test cases so use exactly the 
+following printf statement wherever and whichever is applicable. 
+
+printf("%d is even.", number);
+printf("%d is odd.", number);
+
+*/
+
+   if(number % 2 == 0)
+        printf("%d is even.", number);
+    else
+        printf("%d is odd.", number);
+}
+
+4.
+#include <stdio.h>
+int main()
+{
+    int n1, n2, n3;
+
+    scanf("%d %d %d", &n1, &n2, &n3); /*Three numbers are accepted from the test case */
+
+/*  Complete the code in the box provided below. Use printf statement as provided below:
+printf("%d is the largest number.", n1);
+It may be n1, n2 or n3.
+*/
+
+    if( n1>=n2 && n1>=n3 )
+        printf("%d is the largest number.", n1);
+
+    if( n2>=n1 && n2>=n3 )
+        printf("%d is the largest number.", n2);
+
+    if( n3>=n1 && n3>=n2 )
+        printf("%d is the largest number.", n3);
+}
+
+5.
+#include <stdio.h>
+int main()
+{
+    int n1, n2, n3; 
+    scanf("%d %d %d", &n1, &n2, &n3); /* where three number are read from the test cases and are stored in the variable n1, n2 and n3 */
+
+/* Complete the program to get the desired output */
+/* Only use the printf statement given below to exactly match your output 
+with the output cases. Change the variable n1 as required.
+
+printf("%d is the smallest number.", n1);    //Copy and paste this printf statement wherever required. 
+
+*/
+
+if (n2>n1)
+    {
+    if(n1 < n3)
+  printf("%d is the smallest number.", n1);
+ else
+ printf("%d is the smallest number.", n3);
+    }
+    else
+    {
+  if(n2 < n3)
+ printf("%d is the smallest number.", n2);
+ else
+ printf("%d is the smallest number.", n3);
+    }
+}
+
+6.
+#include<stdio.h>
+void main()
+{
+    int n;
+    long int fact;  /* n is the number whose factorial we have to find and fact is the factorial */
+    scanf("%d",&n);  /* The value of n is taken from test cases */
+
+/* complete the program. Use the printf statements in the format mentioned below 
+to match your output exactly with output test cases 
+
+printf("The Factorial of %d is : %ld",n,fact);
+
+You can declare any other variables if required */
+
+   fact=1;
+   for(int i=n;i>0;i--)
+   {
+     fact*=i;
+   }
+
+printf("The Factorial of %d is : %ld",n,fact);
+
+}
+
+7.
+#include <stdio.h>  
+void main()
+{
+int N, sum=0; 
+scanf("%d", &N); /* The value of N is taken from the test cases */
+
+/* Complete the program. Please use the printf statement given below to 
+exactly match your output with the test cases.
+
+printf("Sum = %d", sum);
+
+*/
+
+ for(int i=2;i<=N;i++)
+{
+  if(i%2==0)
+  sum+=i;
+}
+printf("Sum = %d", sum);
+}
+
+8.
+#include <stdio.h>
+int main()
+{
+
+int N, First_digit, Last_digit;
+
+scanf("%d", &N); //The number is accepted from the test case
+
+Last_digit =N%10;
+ while(N>0)
+ {
+   First_digit=N%10;
+   N/=10;
+ }
+printf("Sum of First and Last digit = %d", First_digit + Last_digit);
+
+return 0;
+}
+
+9.
+#include <stdio.h>
+ int main()
+{
+    int N; 
+    scanf("%d",&N); /*The number is accepted from the test case data*/
+
+/* Complete the rest of the code. Please use the printf statements as below
+by just changing the variables used in your program 
+
+printf("The number %d contains %d digits.",N,count);
+
+*/
+
+ int temp, no_of_digit; 
+no_of_digit=0;
+    temp=N;
+    while(temp>0)
+	{
+        no_of_digit+=1;
+        temp/=10;
+    }
+     printf("The number %d contains %d digits.",N,no_of_digit);
+}
+
+10.
+#include <stdio.h>
+int main()
+{
+    int N;
+    scanf("%d",&N); /* The value of N is taken from the test case data */
+ 
+/* Complete the code.
+Use the printf statements as below
+printf("%d is a number that can be expressed as power of 2.",N);
+printf("%d cannot be expressed as power of 2.",N);
+*/
+
+int t2, flag;
+    t2=N;
+    flag=0;
+
+    while(t2!=1)
+    {
+        if(t2%2!=0){
+            flag=1;
+            break;
+        }
+        t2/=2;
+    }
+
+    if(flag==0)
+        printf("%d is a number that can be expressed as power of 2.",N);
+    else
+        printf("%d cannot be expressed as power of 2.",N);
+}
+  
+11.
+#include<stdio.h>
+int main()
+{
+int i,n,sum=0;
+scanf("%d",&n); //The value of n (an odd integer) is entered from the test case
+
+//Use the printf statement as printf("Sum=%d",sum);
+for(int z=1;z<=n;z=z+2)
+  {
+    sum+=z*z;
+  }
+printf("Sum=%d",sum);
+return 0;
+} 
+
+12.
+#include<stdio.h>
+int main()
+{
+int N;
+scanf("%d", &N); /*The value of N is taken as input from the test case */
+
+int i3,j;
+for(i3=N; i3>0; i3--)
+  {
+  for(j=0;j < i3;j++)
+    {
+    printf("*");
+    }
+  printf("\n");
+  } 
+}  
+
+13.
+#include <stdio.h>
+
+int main()
+{
+    int i, n, largest;
+    int arr[100];
+
+    scanf("%d", &n); /*Accepts total number of elements from the test data */
+
+ for(i = 0; i < n; ++i)
+    {
+       scanf("%d", &arr[i]); /* Accepts the array element from test data */
+    }
+
+largest = arr[0];
+
+for(i = 1; i < n; ++i)
+    {
+    if(largest < arr[i])
+          {
+                     largest = arr[i];
+          }
+    }
+
+printf("Largest element = %d", largest);
+
+    return 0;
+}
+
+14.
+#include<stdio.h>
+ 
+int main() {
+   int arr[20], i, n;
+ 
+   scanf("%d", &n); /* Accepts the number of elements in the array */
+
+  for (i = 0; i < n; i++) 
+     scanf("%d", &arr[i]); /*Accepts the elements of the array */
+
+
+int w, temp;  
+w = i - 1;   
+i = 0;      
+
+   while (i < w) 
+   {
+      temp = arr[i];
+      arr[i] = arr[w];
+      arr[w] = temp;
+      i++;             
+      w--;        
+   } 
+
+for (i = 0; i < n; i++) {
+      printf("%d\n", arr[i]); // For printing the array elements 
+   }
+ 
+   return (0);
+}
+
+15.
+#include<stdio.h>
+int main() 
+{
+   int arr1[20], arr2[20], array_new[40], n1, n2, size, i;
+ /*n1 size of first array (i.e. arr1[]), n2 size of second array(i.e. arr2[]), 
+   size is the total size of the new array (array_new[]) */
+ 
+   scanf("%d", &n1); //Get the size of first array from test data and store it in n1.
+   
+   for (i = 0; i < n1; i++)
+      scanf("%d", &arr1[i]); //Accepts the values for first array 
+ 
+   scanf("%d", &n2); //Get the size of second array from test data and store it in n2.
+   
+   for (i = 0; i < n2; i++)
+      scanf("%d", &arr2[i]); //Accepts the values for second array
+
+  int s;
+  for (i=0;i < n1;++i)
+  array_new[i]=arr1[i];
+
+  size =  n1 + n2;
+  for(i=0, s=n1; s< size &&i < n2; ++i, ++s)
+  array_new[s] = arr2[i];
+//Printing after merging
+
+for (i = 0; i < size; i++) {
+      printf("%d\n", array_new[i]);
+   }
+
+}
+
+16.
+#include<stdio.h>
+int main() {
+int array[30], num, i, pos;  
+/*num is number of elements in the array and loc is the position of the array to be deleted. 
+starting from arr[0] as the first(1) position and so on. */
+
+   scanf("%d", &num); /*Accepts the size of array from test case data */
+ 
+   for (i = 0; i < num; i++) {
+      scanf("%d", &array[i]);  /* Read the array elements from the test case data */
+   }
+ 
+   scanf("%d", &pos); /* Accepts the Position of the element to be deleted */
+
+   while (pos < num)
+   {
+    array[pos - 1] = array[pos];
+    pos+=1;
+   }
+
+  num-=1;
+/* Printing the array after deletion */
+
+for (i = 0; i < num; i++)
+      printf("%d\n", array[i]);
+ 
+   return (0);
+}
+
+17.
+#include<stdio.h>
+int main() {
+   int upper = 0, lower = 0;
+   char ch[100];
+   scanf(" %[^\n]s", ch);  /*A word or a sentence is accepted from test case data */
+
+/* Complete the remaining part of the code to store number of uppercase letters
+in the variable upper and lowercase letters in variable lower.
+The print part of already written. You can declare any variable if necessary */
+
+  int v = 0;
+   while (ch[v] != '\0') {
+      if (ch[v] >= 'A' && ch[v] <= 'Z')
+         upper++;
+      if (ch[v] >= 'a' && ch[v] <= 'z')
+         lower++;
+      v++;
+   }
+   printf("Uppercase Letters : %d\n", upper); /*prints number of uppercase letters */
+   printf("Lowercase Letters : %d\n", lower); /*prints number of lowercase letters */
+ 
+   return (0);
+}
+
+18.
+#include <stdio.h>
+int main()
+{
+    int matrix[20][20];
+    int i,j,r,c;
+
+    scanf("%d",&r); //Accepts number of rows
+    scanf("%d",&c); //Accepts number of columns 
+
+    for(i=0;i< r;i++) //Accepts the matrix elements from the test case data
+    {
+        for(j=0;j< c;j++)
+        {
+            scanf("%d",&matrix[i][j]); 
+        }
+    }
+/*Complete the code to print the sum of each rows. Use the printf() statement as
+ printf("%d\n",sum); Where sum is the sum of a row. 
+*/  
+
+int ans;
+    for(i=0;i < r;i++)
+    {
+        ans=0;      
+        for(j=0;j < c;j++)
+        {
+       
+            ans+=  matrix[i][j];
+        }
+        printf("%d\n",ans);
+    }
+ 
+}
+
+19.
+#include <stdio.h>
+int main()
+{
+    int matrix_A[20][20], matrix_B[20][20], matrix_C[20][20];
+    int i,j,row,col;
+    scanf("%d",&row); //Accepts number of rows
+    scanf("%d",&col); //Accepts number of columns 
+ 
+    /* Elements of first matrix are accepted from test data */
+    for(i=0; i<row; i++)
+    {
+        for(j=0; j<col; j++)
+        {
+            scanf("%d", &matrix_A[i][j]);
+        }
+    }
+
+     /* Elements of second matrix are accepted from test data */
+    
+    for(i=0; i<row; i++)
+    {
+        for(j=0; j<col; j++)
+        {
+            scanf("%d", &matrix_B[i][j]);
+        }
+    }
+
+/* Complete the program to get the desired output. Use printf() statement as below
+    printf("%d ", matrix_C[i][j]); You can declare your own variables if required. 
+*/
+
+for(int i1=0; i1 < row; i1++)
+    {
+        for(int kk=0; kk < col; kk++)
+        {
+    
+            matrix_C[i1][kk] = matrix_A[i1][kk] - matrix_B[i1][kk];
+        }
+    }
+
+     for(i=0; i < row; i++)
+    {
+        for(j=0; j < col; j++)
+        {
+            printf("%d ", matrix_C[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+20.
+#include <stdio.h>
+int main()
+{
+int matrix[20][20];
+int i,j,r;
+   
+scanf("%d", &r); //Accepts number of rows or columns
+
+    for(i=0;i< r;i++) //Accepts the matrix elements from the test case data
+    {
+        for(j=0;j<r; j++)
+        {
+            scanf("%d",&matrix[i][j]);
+        }
+    }
+
+/* Complete the program to get the desired output. Use the printf() statement as
+printf("%d ", matrix[i][j]);
+*/
+
+for(int rows = 0; rows < i; rows++)
+  	{
+  		printf("\n");
+   		for(int columns = 0; columns < j; columns++)
+    	{
+    		if(rows >= columns)
+    		{
+    			printf("%d ", matrix[rows][columns]);
+			}
+			else
+			{
+				printf("0 ");
+			}
+   	 	}
+  	}
+  	
+ 	return 0;
+}
+
+21.
+#include<stdio.h>
+int HCF(int, int); //You have to write this function which calculates the HCF. 
+	 
+int main()
+{
+   int a, b, c, d, result;
+   scanf("%d %d %d %d", &a, &b, &c, &d); /* Takes 4 number as input from the test data */
+   result = HCF(HCF(a, b), HCF(c,d));
+   printf("The HCF is %d", result);
+}
+
+//Complete the rest of the program to calculate HCF
+int HCF(int p, int q)
+{
+   while (p != q)
+   { 
+      if (p  >  q)
+       {
+           return HCF(p - q, q);
+       }
+       else
+       {
+       return HCF(p, q - p);
+       }
+    }
+    return(p); 
+}
+
+22.
+#include <stdio.h>  
+long power(int, int);
+int main()
+{
+int pow, num;
+long result;
+
+scanf("%d", &num); //The number taken as input from test case data 
+
+scanf("%d", &pow); //The power is taken from the test case 
+result = power(num, pow);
+printf("%d^%d is %ld", num, pow, result);
+return 0;
+}
+long power(int n, int p)
+{
+if (p)
+{
+return (n * power(n, p - 1));
+}
+return(1);
+}
+
+23.
+#include <stdio.h>
+int binary_conversion(int); //function to convert binary to decimal number
+int main()
+  {
+  int num, bin;  //num is the decimal number and bin is the binary equivalent for the number
+
+  scanf("%d", &num); //The decimal number is taken from the test case data
+  bin = binary_conversion(num); //binary number is stored in variable bin
+  printf("The binary equivalent of %d is %d", num, bin);
+  return 0;
+  }
+int binary_conversion(int number3)
+  { 
+     if (number3 == 0)
+        {
+            return 0;
+        }
+        else
+        {
+            return (number3 % 2) + 10 * binary_conversion(number3 / 2);
+        }
+  }
+
+24.
+#include<stdio.h>
+int prime(int num); //Function to find whether the number is prime or not.
+int main() {
+   int lines;
+   scanf("%d", &lines); //Number of lines of the triangle is taken from test data.
+
+//use the printf statement as printf("%d\t", variable_name); to print the elements in a row
+int q, t;
+int num = 2;
+for (q = 0; q < lines; q++) 
+{
+      
+   for (t = 0; t <= q; t++)
+   {
+      while (!prime(num))  
+      {
+         num++;
+      }
+         printf("%d\t", num++);  
+      }
+      printf("\n");
+   }
+   return (0);
+}  
+ 
+int prime(int num) 
+{
+   int q, flag;
+   for (q = 2; q < num; q++)
+   {
+      if (num % q != 0)
+         flag = 1;
+      else {
+         flag = 0;
+         break;
+      }
+   }
+ 
+   if (flag == 1 || num == 2)
+      return (1);
+   else
+      return (0);
+}
+
+25.
+#include <stdio.h>
+int main()
+{
+   int array[100], search, n, count = 0;
+   //"search" is the key element to search and 'n' is the total number of element of the array
+   // "count" is to store total number of elements
+
+ scanf("%d", &n); //Number of elements is taken from test case
+
+ int c;
+   for (c = 0; c < n; c++)
+      scanf("%d", &array[c]);
+
+   scanf("%d", &search); // The element to search is taken from test case
+
+/* Use the printf statements as below:
+"%d is present at location %d.\n"  for each locations
+"%d is not present in the array." if the element is not found in the list
+"%d is present %d times in the array."
+*/
+ for (c = 0; c  <  n; c++)
+  
+    {
+      if (array[c] == search)
+      {
+         printf("%d is present at location %d.\n", search, c+1);
+         count=count+1;
+      }     }
+   if (count == (1-1))
+      printf("%d is not present in the array.", search);
+   else
+      printf("%d is present %d times in the array.", search, count);
+
+   return 0;
+}
+
+26.
+#include <stdio.h>
+void merge(int a[], int m, int b[], int n, int sorted[]);
+int main() 
+{
+int a[100], b[100], m, n, c, sorted[200];
+
+/* a[100] and b[100] are the two given arrays and m and n are the their respective sizes. c is a counter and sorted[200] is the final sorted array */
+
+scanf("%d", &m); //Number of elements in the first array
+
+  for (c = 0; c < m; c++) 
+    {
+    scanf("%d", &a[c]); //Elements of first array is read
+    }
+
+  scanf("%d", &n); //Number of elements in second array
+
+  for (c = 0; c < n; c++) 
+  {
+    scanf("%d", &b[c]); //Elements of second array is read
+  }
+ merge(a, m, b, n, sorted); 
+
+//The merged function is called where the two arrays are merged and sorted.
+
+  printf("Sorted array:\n");
+
+  for (c = 0; c < m + n; c++) {
+    printf("%d\n", sorted[c]);
+  }
+
+  return 0;
+}
+ void merge(int a[], int m, int b[], int n, int sorted[]) {
+  int i, j12, k0;
+
+  j12 = k0 = 0;
+
+  for (i = 0; i  <  m + n;) {
+    if (j12  <  m && k0  <  n) {
+      if (a[j12] <  b[k0]) {
+        sorted[i] = a[j12];
+        j12=j12+1;
+      }
+      else {
+        sorted[i] = b[k0];
+        k0++;
+      }
+      i++;
+    }
+    else if (j12 == m) {
+      for (; i  <  m + n;) {
+        sorted[i] = b[k0];
+        k0++;
+        i++;
+      }
+    }
+    else {
+      for (; i  <  m + n;) {
+        sorted[i] = a[j12];
+        j12++;
+        i++;
+      }
+    }
+  }
+} 
+
+27.
+#include <stdio.h>
+int main()
+{
+ int c, n, search,
+ array[100];
+ scanf("%d",&n); //number of elements in the array
+
+ for (c = 0; c < n; c++)
+ scanf("%d",&array[c]);
+
+ scanf("%d", &search); //The element to search is read from test case.
+
+/* Use the printf statements as below:
+ printf("%d found at location %d.\n", search, variable_name);
+ printf("Not found! %d isn't present in the list.\n", search);
+*/
+  int first = 0;
+  int last = n - 1;
+  int middle = (first+last)/2;
+
+  while (first <=  last) {
+    if (array[middle]  <  search)
+      first = middle + 1;
+    else if (array[middle] == search) {
+      printf("%d found at location %d.", search, middle+1);
+      break;
+    }
+    else
+      last = middle - 1;
+
+    middle = (first + last)/2;
+  }
+  if (first >  last)
+    printf("Not found! %d isn't present in the list.", search);
+
+  return 0;
+}
+
+28.
+#include <stdio.h>
+int main() {
+  int array[100], n, c;
+  scanf("%d", &n); // n is number of elements in the array.
+  for (c = 0; c < n; c++) {
+    scanf("%d", &array[c]);
+  }
+int tp, over;
+   over = n - 1;
+   for (c = 0; c <  n/2; c++) 
+   {
+    tp       = array[c];
+    array[c]   = array[over];
+    array[over] = tp;
+    over--;    }   
+
+printf("Reversed array elements are:\n");
+
+  for (c = 0; c < n; c++) {
+    printf("%d\n", array[c]);
+  }
+  return 0;
+}
+
+29.
+#include<stdio.h>
+float fun (float x); //Function fun returns the function value of f(x)
+void bisection (float *x, float a, float b, int *itr); // This function computes the root of f(x) using bisection method
+
+int main ()
+{
+    int itr = 0, maxmitr=10;
+    float x, a=1.0, b=2.0, allerr, x1; // x is the value of root in each iteration, x1 is the final value of the root 
+   // a and b are the initial range for calculating the root using bisection method
+      
+scanf("%f", &allerr);  // allerr is the allowable error taken from test case data 
+    bisection (&x, a, b, &itr);
+
+/* Use the printf statement as given below to print the root
+printf("Root = %1.4f", x1); */
+do
+    {
+        if (fun(a)*fun(x) < 0)
+            b=x;
+        else
+            a=x;
+        bisection (&x1, a, b, &itr);
+        if (((x1-x) < 0 && -(x1-x) <  allerr) || ((x1-x) > 0 && (x1-x) < allerr))
+        {
+            printf("Root = %1.4f", x1);
+            return 0;
+        }
+        x=x1;
+    }
+    while (itr <  maxmitr);
+    return 1;
+}
+float fun (float z)
+{
+    return (2*z*z*z - 3*z - 5);
+}
+void bisection (float *x3, float a, float b, int *itr)
+{
+    *x3=(a+b)/2;
+    ++(*itr);
+}
+
+30.
+#include<stdio.h>
+float f(float x);
+float df (float x);
+
+int main()
+{
+    int itr, maxmitr; // itr is the iteration number and maxitr is the maximum allowable iteration 
+    float x0=1.0, x1; // x0 is the initial value and x1 is result 
+    scanf("%d", &maxmitr); // Taken from the test cases 
+
+// use the printf statement as printf("Root = %8.6f", x1);
+ float rr;
+    for (itr=1; itr <= maxmitr; itr++)
+    {
+        rr=f(x0)/df(x0);
+        x1=x0-rr;
+        x0=x1;
+    }
+    printf("Root = %8.6f", x1);
+    return 0;
+}
+float f(float x2)
+{
+    return x2*x2*x2 - 2*x2  - 3;
+}  
+float df (float x)
+{
+    return 3*x*x-2;
+}
+
+31.
+#include <stdio.h>
+int main()
+{
+    int a[100],i, n;
+    scanf("%d",&n);  //Number of elements of the array is taken from the test case data 
+   
+   for (i=0; i<n; i++)
+    {
+        scanf("%d",a+i); // Input the array elements
+    }
+ int k,t2;
+for (i=0; i < (n-1); i++) 
+    {
+        for (k=i+1; k < n; k++)
+        {
+            if (*(a+i) > *(a+k))
+            {
+                t2=*(a+i);
+                *(a+i)=*(a+k);
+                *(a+k)=t2;
+            }
+        }
+    }
+//   Printing sorted array in ascending order 
+    for (i=0; i<n; i++)
+    {
+        printf("%d\n",*(a+i));
+    }
+    return 0;
+   }
+
+32.
+#include<stdio.h>
+void sort(int *a, int n);
+int main()
+{
+    int a[20];
+    int n,i; 
+    scanf("%d",&n); // Enter number of elements to sort is taken from test case data
+   
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]); // The elements of the array is taken from the test data
+    }
+
+sort(a, n); // Calling the sorting function
+
+//Printing the sorted array 
+    for(i=0;i<n;i++)
+    {
+        printf("%d\n",a[i]);
+    }
+   return 0;
+}
+void sort(int *a, int n)
+{
+    int ii,temp,j2;
+    for(ii=1;ii < n;ii++)
+    {
+        for(j2=0;j2  < n-ii;j2++)
+        {
+           if(*(a+j2) >= *(a+j2+1))
+        {
+            temp = *(a+j2);
+            *(a+j2)= *(a+j2+1);
+            *(a+j2+1)= temp;
+        }
+        }
+    }
+}
+
+33.
+#include<stdio.h>
+int main()
+{
+  float t[100]={10,15,18,22,30}, v[100]={22,26,35,48,68};
+  float a; //Value of the t to find the respective value of v(t)
+  scanf("%f", &a);  // This will be taken from test cases
+ int ijk,y;
+float b, c, k =0;
+for(ijk=0; ijk < 5; ijk++)
+   {
+      b=1;
+      c=1;
+      for(y=0; y < 5; y++)
+        { 
+           if(y!=ijk)
+             {
+               b=b*(a-t[y]);
+               c=c*(t[ijk]-t[y]);
+              }
+            }
+        k=k+((b/c)*v[ijk]); 
+        }
+
+
+printf("The respective value of the variable v is: %.2f", k);
+  return 0;
+}
+
+34.
+#include<stdio.h>
+float func(float x);
+int main()
+{
+  int n=10; //Taking n=10 sub intervals
+  float a,b,integral; //integral is the integration result
+  scanf("%f",&a); // initial limit taken from test case 
+  scanf("%f",&b); // Final limit taken from test case
+
+//Use the printf statement as printf("The integral is: %0.6f",integral);
+ int e;
+float h,x, totalplus=0;  
+if(b>a)
+  h=(b-a)/n;
+  else
+  h=-(b-a)/n;
+  for(e=1;e < n;e++){
+    x=a+e*h;
+   totalplus+=func(x);
+  }
+  integral=(h/2)*(func(a)+func(b)+2*totalplus);
+  printf("The integral is: %0.6f",integral);
+  return 0;
+}
+
+float func(float x)
+{
+  return x*x;
+} 
+
+35.
+#include<stdio.h>
+float func(float x,float y);
+int main()
+{
+    float xn; 
+    scanf("%f", &xn); // xn (i.e. the value of x) will be taken from test cases
+        
+//Use the printf statement as: printf("y=%.4f",y);
+float g1,g2,g3,g4,g,h=0.3;
+    float x0 = 0.3, y0 = 5;
+while(x0 < xn)
+    {
+        g1=func(x0,y0);
+        g2=func((x0+h/2.0),(y0+g1*h/2));
+        g3=func((x0+h/2.0),(y0+g2*h/2));
+        g4=func((x0+h),(y0+g3*h));
+        g=((g1+2*g2+2*g3+g4)/6);
+        y0=y0+g*h;
+        x0=x0+h;  
+    }
+    printf("y=%.6f",y0);
+    return 0;
+}       
+float func(float x,float y)
+{
+    float m;
+    m=(x*(x+1)-3*y*y*y)/10;
+    return m;
+} 
+
+36.
+#include<stdio.h>
+float func(float x,float y);
+int main()
+{
+    float xn; 
+    scanf("%f", &xn); // xn (i.e. the value of x) will be taken from test cases
+        
+//Use the printf statement as: printf("y=%.4f",y);
+float g1,g2,g3,g4,g,h=0.3;
+    float x0 = 0.3, y0 = 5;
+while(x0 < xn)
+    {
+        g1=func(x0,y0);
+        g2=func((x0+h/2.0),(y0+g1*h/2));
+        g3=func((x0+h/2.0),(y0+g2*h/2));
+        g4=func((x0+h),(y0+g3*h));
+        g=((g1+2*g2+2*g3+g4)/6);
+        y0=y0+g*h;
+        x0=x0+h;  
+    }
+    printf("y=%.6f",y0);
+    return 0;
+}       
+float func(float x,float y)
+{
+    float m;
+    m=(x*(x+1)-3*y*y*y)/10;
+    return m;
+} 
+
+37.
+#include <stdio.h>
+void findFact(int, long int*);
+int main()
+{
+        long int fact; //factorial of the number
+        int num1; 
+		scanf("%d",&num1); //The number is taken from test data
+
+         findFact(num1, &fact);
+         printf("The Factorial of %d is : %ld",num1, fact);
+         return 0;
+        }
+void findFact(int n, long int *f)
+		{
+        int i;
+
+       *f =1;
+       for(i=1;i<=n;i++)
+       *f=*f*i;
+       }
+
+38.
+#include<stdio.h>
+struct student
+{
+int rollno;
+char name[20];
+int score;
+};
+void main()
+{
+struct student s[20];
+int i, n;
+
+scanf("%d" ,&n); //No. of Students taken from test data
+// Roll no., Name and Score of n students are taken from test data
+for(i=0;i<n;i++)
+{
+scanf("%d", &s[i].rollno);
+scanf("%s", s[i].name);
+scanf("%d", &s[i].score);
+}
+//Complete the program so that merit list is printed in descending order
+struct student temp;
+int j;
+for(i=0;i<n-1;i++)
+{
+for(j=0;j<n-1;j++)
+{
+if(s[j].score<s[j+1].score)
+{
+temp=s[j];
+s[j]=s[j+1];
+s[j+1]=temp;
+}
+}
+}
+printf("The Merit List is :\n");
+for(i=0;i<n;i++)
+{
+printf("%d", s[i].rollno);
+printf("  %s", s[i].name);
+printf("  %d\n", s[i].score);
+}
+
+}
+
+39.
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n; 
+    float *element;
+
+    scanf("%d", &n); //Total number of elements
+
+    // Allocate the memory for 'n' number of elements. 
+    //Then take the elements as input from test data
+   // Use printf statement as printf("Largest element = %.2f", *element);
+element = (float*) calloc(n, sizeof(float));
+
+    if(element == NULL)
+    {
+        printf("Error!!! memory not allocated.");
+        exit(0);
+    }
+
+    // Stores the number entered by the user.
+    int i;
+    for(i = 0; i < n; ++i)
+    {
+        scanf("%f", element + i);
+    }
+
+ // find the largest
+    for(i = 1; i < n; ++i)
+    {
+       if(*element < *(element + i))
+         *element = *(element + i);
+    }
+
+    printf("Largest element = %.2f", *element);
+
+    return 0;
+}
+
+40.
+#include<stdio.h>
+
+struct Distance{
+    int feet;
+    int inch;
+}d1,d2,sum;
+
+int main()
+    {
+    //Enter 1st distance
+    scanf("%d",&d1.feet); 
+    scanf("%d",&d1.inch);
+    //Enter 2nd distance
+    scanf("%d",&d2.feet);
+    scanf("%d",&d2.inch);
+sum.feet=d1.feet+d2.feet;
+    sum.inch=d1.inch+d2.inch;
+ 
+/* If inch is greater than 12, converting it to feet. */
+    if (sum.inch>=12)
+    {
+        sum.inch=sum.inch-12;
+        ++sum.feet;
+    }
+printf("Sum of distances = %d feet %d inches",sum.feet,sum.inch);
+    return 0;
+}
